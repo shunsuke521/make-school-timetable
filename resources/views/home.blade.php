@@ -13,9 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     {{ __('You are logged in!') }}
                 </div>
+                <a class="link-to-mypage" href="{{ route('mypage') }}">マイページ</a>
             </div>
         </div>
     </div>
