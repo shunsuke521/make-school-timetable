@@ -5003,13 +5003,7 @@ input[type=button].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem 1.25rem 1rem 1.25rem;
-  text-align: center;
-}
-
-.link-to-mypage{
-  text-align: right;
-  padding: 0 3rem 1.25rem 0;
+  padding: 1.25rem;
 }
 
 .card-title {
@@ -10932,5 +10926,54 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+.timetable-grade {
+  margin: 1.2rem 0 0 3rem;
+}
+
+.mypage-timetable {
+  font-size: 1.2rem;
+  width: 80%;
+  margin: 1rem auto 1.5rem auto;
+  table-layout: fixed;
+}
+
+.mypage-timetable-day {
+  width: 15%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.mypage-timetable-day:first-child {
+  width: 10%;
+}
+
+.mypage-timetable-lessons {
+  border-top: 1px solid #6c757d;
+  border-bottom: 1px solid #6c757d;
+}
+
+.mypage-timetable-lesson_number {
+  width: 10%;
+  box-sizing: border-box;
+  text-align: center;
+  border-right: 1px solid #6c757d;
+}
+
+.mypage-timetable-lesson {
+  width: 15%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.more_timetable_link {
+  text-align: right;
+  padding-right: 3rem;
+  text-decoration: underline;
+}
+
+.more_timetable_link a {
+  color: #212529 !important;
 }
 

@@ -11,20 +11,23 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav id="header" class="z-index3 navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    時間割作成
+                <a class="navbar-brand site-title" href="{{ url('/mypage') }}">
+                &nbsp;時間割作成&nbsp;
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -60,6 +63,18 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('mypage') }}">
+                                        マイページ
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('newLessonDetail') }}">
+                                        時間割作成
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('newClassroom') }}">
+                                        教室登録
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('newLessonName') }}">
+                                        科目登録
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -74,12 +89,12 @@
 
         <!-- フラッシュメッセージ -->
         @if (session('flash_message'))
-            <div class="alert alert-primary text-center" role="alert">
+            <div class="flash_message alert alert-primary text-center" role="alert">
                 {{ session('flash_message') }}
             </div>
         @endif
 
-        <main class="py-4">
+        <main id="main">
             @yield('content')
         </main>
     </div>

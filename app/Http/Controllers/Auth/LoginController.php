@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -28,6 +30,14 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    protected function redirectTo() {
+        if(! Auth::user()) {
+             return '/login';
+        }
+        session()->flash('flash_message', 'ログインが完了しました');
+        return route('mypage');
+     }
+
     /**
      * Create a new controller instance.
      *
@@ -40,5 +50,11 @@ class LoginController extends Controller
 
     public function username(){
         return 'name';
+    }
+
+    protected function loggedOut(Request $request)
+    {
+        session()->flash('flash_message', 'ログアウトしました');
+        return redirect('/login');
     }
 }
