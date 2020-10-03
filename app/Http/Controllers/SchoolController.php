@@ -15,45 +15,8 @@ class SchoolController extends Controller
     public function mypage()
     {
         $school = Auth::user();
-        //時間割の科目に関してはEloquentでやる方法がよくわからなかったので結局クエリビルダでやる
-        // $schedule1 = DB::table('schedules')->join('lessons', 'schedules.lesson1', '=', 'lessons.id')
-        //                                    ->join('lesson_name', 'lessons.lesson_name_id', '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        // $schedule2 = DB::table('schedules')->join('lessons', 'schedules.lesson2', '=', 'lessons.id')
-        //                                    ->join('lesson_name', 'lessons.lesson_name_id', '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        // $schedule3 = DB::table('schedules')->join('lessons', 'schedules.lesson3', '=', 'lessons.id')
-        //                                    ->join('lesson_name', 'lessons.lesson_name_id', '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        // $schedule4 = DB::table('schedules')->join('lessons', 'schedules.lesson4', '=', 'lessons.id')
-        //                                    ->join('lesson_name', 'lessons.lesson_name_id', '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        // $schedule5 = DB::table('schedules')->join('lessons', 'schedules.lesson5', '=', 'lessons.id')
-        //                                    ->join('lesson_name', 'lessons.lesson_name_id', '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        // $schedule6 = DB::table('schedules')->join('lessons', 'schedules.lesson6', '=', 'lessons.id')
-        //                                    ->join('lesson_name', 'lessons.lesson_name_id', '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        // $schedule7 = DB::table('schedules')->join('lessons', 'schedules.lesson7', '=', 'lessons.id')
-        //                                    ->join('lesson_name', 'lessons.lesson_name_id', '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        // $schedule8 = DB::table('schedules')->join('lessons', 'schedules.lesson8', '=', 'lessons.id')
-        //                                    ->join('lesson_name', "lessons.lesson_name_id", '=', 'lesson_name.id')
-        //                                    ->where('grade', 1)
-        //                                    ->pluck('lesson_name', 'day');
-        
-        // $schedules = [$schedule1, $schedule2, $schedule3, $schedule4, $schedule5, $schedule6, $schedule7, $schedule8];
-
 
         $period = ["year" => 2020, "semester" => 1, "class" => "A"];
-        // リファクタ
         // 一年生の時間割
         for ($i=1; $i <= 8; $i++) { 
             $schedules1[] = DB::table('schedules')->join('lesson_name', "schedules.lesson{$i}", '=', 'lesson_name.id')
@@ -66,6 +29,7 @@ class SchoolController extends Controller
                                     //  pluckは取り出したいカラムを第一引数、キーにしたいカラムを第二引数に指定する
                                     // この例だと、曜日の数字をキーにしてその曜日にどの教科が入っているか、というような形になっている
         }
+        \Log::info(print_r($schedules1,true));
 
         foreach ($schedules1 as $schedule) {
             $day = [];
