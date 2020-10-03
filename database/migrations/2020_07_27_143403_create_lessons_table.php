@@ -17,12 +17,10 @@ class CreateLessonsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('lesson_name_id');
-            $table->unsignedBigInteger('classroom_id');
             $table->string('teacher_name');
             $table->timestamps();
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('lesson_name_id')->references('id')->on('lesson_name');
-            $table->foreign('classroom_id')->references('id')->on('classrooms');
         });
     }
 

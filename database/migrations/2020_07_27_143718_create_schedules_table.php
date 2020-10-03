@@ -30,15 +30,15 @@ class CreateSchedulesTable extends Migration
             $table->unsignedBigInteger('lesson7')->nullable();
             $table->unsignedBigInteger('lesson8')->nullable();
             $table->timestamps();
-            $table->foreign('school_id')->references('id')->on('schools');
-            $table->foreign('lesson1')->references('id')->on('lessons');
-            $table->foreign('lesson2')->references('id')->on('lessons');
-            $table->foreign('lesson3')->references('id')->on('lessons');
-            $table->foreign('lesson4')->references('id')->on('lessons');
-            $table->foreign('lesson5')->references('id')->on('lessons');
-            $table->foreign('lesson6')->references('id')->on('lessons');
-            $table->foreign('lesson7')->references('id')->on('lessons');
-            $table->foreign('lesson8')->references('id')->on('lessons');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('lesson1')->references('id')->on('lesson_name');
+            $table->foreign('lesson2')->references('id')->on('lesson_name');
+            $table->foreign('lesson3')->references('id')->on('lesson_name');
+            $table->foreign('lesson4')->references('id')->on('lesson_name');
+            $table->foreign('lesson5')->references('id')->on('lesson_name');
+            $table->foreign('lesson6')->references('id')->on('lesson_name');
+            $table->foreign('lesson7')->references('id')->on('lesson_name');
+            $table->foreign('lesson8')->references('id')->on('lesson_name');
         });
     }
 

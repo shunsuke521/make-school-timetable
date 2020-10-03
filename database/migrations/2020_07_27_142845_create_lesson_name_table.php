@@ -19,8 +19,9 @@ class CreateLessonNameTable extends Migration
             $table->string('lesson_name');
             $table->unsignedBigInteger('classroom1');
             $table->unsignedBigInteger('classroom2')->nullable();
+            $table->string('teacher');
             $table->timestamps();
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
