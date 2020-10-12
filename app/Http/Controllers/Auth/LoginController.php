@@ -32,6 +32,7 @@ class LoginController extends Controller
 
     protected function redirectTo() {
         if(! Auth::user()) {
+            \Log::info('redirect');
              return '/login';
         }
         session()->flash('flash_message', 'ログインが完了しました');

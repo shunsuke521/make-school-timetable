@@ -1,3 +1,50 @@
+#top-page img{
+    width: 100vw;
+    height: 100vh; 
+}
+
+#top-page .main-phrase{
+    color: #e6e6e6;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+
+#top-page .main-phrase h1{
+    line-height: 3.5rem;
+    font-size: 2.5rem;
+}
+
+#top-page .regi-or-login{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    padding-bottom: 10rem;
+    padding-left: 12rem;
+}
+
+#top-page .regi-or-login p{
+    color: #e6e6e6;
+    margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+}
+
+#top-page .sample-video-zone{
+    width: 500px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+#top-page .sample-video-zone video{
+    width: 100%;
+}
+
+#top-page .sample-video-zone .how-to-use{
+    color: #e6e6e6;
+}
+
 .line-height1{
     line-height: 1rem;
 }

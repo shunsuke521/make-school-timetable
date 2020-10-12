@@ -16,14 +16,13 @@ class SchoolController extends Controller
     {
         $school = Auth::user();
 
-        $period = ["year" => 2020, "semester" => 1, "class" => "A"];
+        $period = ["year" => 2020, "semester" => 1, "class" => 1];
         // 一年生の時間割
         for ($i=1; $i <= 8; $i++) { 
             $schedules1[] = DB::table('schedules')->join('lesson_name', "schedules.lesson{$i}", '=', 'lesson_name.id')
                                      ->where('grade', 1)
                                      ->where('year', $period["year"])
                                      ->where('semester', $period["semester"])
-                                     ->where('class', $period["class"])
                                      ->where('schedules.user_id', $school->id)
                                      ->pluck('lesson_name', 'day');
                                     //  pluckは取り出したいカラムを第一引数、キーにしたいカラムを第二引数に指定する

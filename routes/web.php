@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/school/top');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/top', 'HomeController@top')->name('top');
 Route::get('/mypage', 'SchoolController@mypage')->name('mypage');
 // Route::get('/createTimetable', 'SchoolController@createTimetable')->name('createTimetable');
 Route::get('/new/classroom', 'SchoolController@newClassroom')->name('newClassroom');
