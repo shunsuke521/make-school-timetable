@@ -7,7 +7,25 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// hosokawa
+.login-success{
+    padding-bottom: 0 !important;
+    &-sentence{
+        text-align: center;
+    }
+}
+
+.link-to-mypage{
+    text-align: right;
+    padding-right: 8rem;
+    text-decoration: underline;
+    a{
+        color: #212529 !important;
+    }
+}
+
+.more-schedule{
+    margin-bottom: 5rem;
+}
 
 .timetable-grade{
     margin: 1.2rem 0 0 3rem;
@@ -49,5 +67,24 @@
     text-decoration: underline;
     a{
         color: #212529 !important;
+    }
+}
+
+#search-condition{
+    padding: 2rem 6rem 0 6rem;
+    & .input-form{
+        margin: 0 auto;
+        padding: 0 3rem;
+        & .input-form-condition{
+            width: 15rem;
+            margin: 1rem auto;
+            & input[type="number"]{
+                width: 10rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+    & input[type="submit"]{
+        margin-left: 20rem;
     }
 }

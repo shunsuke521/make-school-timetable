@@ -10928,6 +10928,28 @@ a.text-dark:focus {
   }
 }
 
+.login-success {
+  padding-bottom: 0 !important;
+}
+
+.login-success-sentence {
+  text-align: center;
+}
+
+.link-to-mypage {
+  text-align: right;
+  padding-right: 8rem;
+  text-decoration: underline;
+}
+
+.link-to-mypage a {
+  color: #212529 !important;
+}
+
+.more-schedule {
+  margin-bottom: 5rem;
+}
+
 .timetable-grade {
   margin: 1.2rem 0 0 3rem;
 }
@@ -10975,5 +10997,28 @@ a.text-dark:focus {
 
 .more_timetable_link a {
   color: #212529 !important;
+}
+
+#search-condition {
+  padding: 2rem 6rem 0 6rem;
+}
+
+#search-condition .input-form {
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+#search-condition .input-form .input-form-condition {
+  width: 15rem;
+  margin: 1rem auto;
+}
+
+#search-condition .input-form .input-form-condition input[type=number] {
+  width: 10rem;
+  margin-left: 1rem;
+}
+
+#search-condition input[type=submit] {
+  margin-left: 20rem;
 }
 

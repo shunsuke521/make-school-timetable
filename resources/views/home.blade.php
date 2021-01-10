@@ -7,15 +7,15 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
+                <div class="card-body login-success">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{ __('You are logged in!') }}
+                    <p class="login-success-sentence">{{ __('You are logged in!') }}</p>
                 </div>
-                <a class="link-to-mypage" href="{{ route('mypage') }}">マイページ</a>
+                <p class="link-to-mypage"><a href="{{ route('mypage') }}">>>マイページへ</a></p>
             </div>
         </div>
     </div>

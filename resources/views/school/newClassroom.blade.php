@@ -36,9 +36,7 @@
                         <h2 class="col-md-5 offset-md-1 my-3 registered-list-title">登録済みの教室一覧</h2>
                         <div class="row col-md-10 offset-md-1 my-3">
                             @foreach($classrooms as $classroom)
-                            <div class="col-md-3 registered-classroom-elm">
-                                {{ $classroom }}
-                            </div>
+                            <div class="col-md-3 registered-classroom-elm">{{ $classroom }}</div>
                             @endforeach
                         </div>
                     </div>

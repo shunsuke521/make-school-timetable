@@ -59,11 +59,11 @@
             </div>
             <div class="regi-or-login">
                 <p><i class="fas fa-caret-down"></i>&emsp;今すぐ登録する</p>
-                <a type="submit" class="col-md-10 btn btn-light">
+                <a type="submit" class="col-md-10 btn btn-light" href="{{ route('register') }}">
                     新規登録
                 </a>
                 <p><i class="fas fa-caret-down"></i>&emsp;登録済みの方はこちら</p>
-                <a type="submit" class="col-md-10 btn btn-secondary">
+                <a type="submit" class="col-md-10 btn btn-secondary" href="{{ route('login') }}">
                     ログイン
                 </a>
             </div>

@@ -12,6 +12,4 @@ const mix = require('laravel-mix');
  */
 
 mix.react('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/assets/sass/_base.scss', '../resources/assets/build/css') // importファイルは逐一追加する(しないとwatch-pollで監視できない)
-   .sass('resources/assets/sass/style.scss', 'public/css/style.css');
+    .sass('resources/sass/app.scss', 'public/css');
